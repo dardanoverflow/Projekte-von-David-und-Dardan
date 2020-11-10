@@ -9,4 +9,7 @@ public class Währungsrechner {
 		
 	}
 
-//Hallo
+//Währungsrechner
+//1€ = 1.34$ von € in $ umrechnen
+// wir rechnen den € Wert mal den $ wert und erhalten $
+// David stinkt
