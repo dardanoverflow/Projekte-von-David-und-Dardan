@@ -5,35 +5,33 @@ public class Währungsrechner {
 
 	static void Rechner() {
 		Scanner sc = new Scanner(System.in);
-		boolean invalidnum = true;
+		boolean invalidnum = false;
 		double t;
 		System.out.println("Möchten Sie die Umrechung in US-Dollar(1) oder Euro(2) umrechen?: ");
 		do {
 		int i = sc.nextInt();
-		if (i == 1) { 																							// leitet die Umrechnung von Euro in Dollar ein
+		if (i == 1) { 															// leitet die Umrechnung von Euro in Dollar ein
 			System.out.println("Bitte geben sie Ihren Betrag in Euro ein: ");
-			invalidnum = false;	
 			t = sc.nextDouble();
 			System.out.println("Ihr angegebener Euro Wert entspricht " + t*1.18 + " US-Dollar.");
 			} else if (i == 2) {
-			invalidnum = false;																				//leitet die Umrechnung von Dollar in Euro ein			
 			System.out.println("Bitte geben sie Ihren Betrag in Dollar ein: ");
 			t = sc.nextDouble();				
 			System.out.println("Ihr Betrag entspricht "+ t/1.18+ "Euro.");
 			} else {
-			
+			invalidnum = true;
 			System.out.println("Bitte geben sie nur eine 1 oder 2 ein: ");
 			}
-		} while (invalidnum);
+		} while (invalidnum = true);
 	}
+	
 
 	public static void main(String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
 		Rechner();
 		boolean loop = true;
 		while(loop) {
-			System.out.print("Möchten Sie noch mal eine Umrechnung durchführen? (J)a oder (N)ein?: ");
+			System.out.print("Möchten Sie noch mal eine Umrechnung durchführen? ja oder nein?: ");
 			String answer = " "; answer = sc.nextLine();	
 			if (answer.equals("ja")) {
 				Rechner();
@@ -42,7 +40,7 @@ public class Währungsrechner {
 				loop = false;
 				System.out.println("Sie haben den Währungsrechner beendet.");
 			} else {
-				System.out.println("Bitte wählen Sie nur zwischen ja und nein: ");
+				System.out.println("Bitte wählen Sie nur zwischen ja und nein");
 			}
 		}
 	}
